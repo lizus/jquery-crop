@@ -1,0 +1,18 @@
+.crop-error {
+  z-index: 99999;
+  display: block;
+  position: fixed;
+  top: -100%;
+  left: 50%;
+  transform: translate(-50%,0);
+  transition: all .2s;
+  background: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #f30;
+  &.show {
+    top: 50px;
+  }
+}

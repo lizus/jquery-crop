@@ -1,0 +1,61 @@
+.crop-control {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: auto;
+  z-index: 2;
+  overflow: visible;
+  text-align: center;
+  padding: 10px 0;
+  background: rgba(0,0,0,0.2);
+}
+.crop-show-btns {
+  margin: 0 -5px;
+  text-align: center;
+  white-space: nowrap;
+  color: #fff;
+  .crop-btn {
+    display: inline-block;
+    margin: 0 5px;
+    border: none;
+    border-radius: 3px;
+    background: #eee;
+    color: #999;
+    line-height: 20px;
+    padding: 0 10px;
+    font-size: 12px;
+    cursor: pointer;
+    outline: none;
+    &:hover {
+      background: #999;
+      color: #fff;
+    }
+    &.crop-show-upload {
+      background: #38f;
+      color: #fff;
+      &:hover {
+        background: darken(#38f, 10%);
+      }
+    }
+  }
+  [type=text] {
+    display: inline-block;
+    width: 48px;
+    font-size: 12px;
+    border: none;
+    border-radius: 3px;
+    height: 20px;
+    line-height: 20px;
+    padding: 0 10px;
+    margin: 0 5px;
+    background: #fff;
+    outline: none;
+    color: #333;
+  }
+  [disabled] {
+    background: transparent;
+    cursor: not-allowed;
+    color: #eee;
+  }
+}

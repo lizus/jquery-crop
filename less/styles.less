@@ -1,0 +1,93 @@
+@import "crop-error";
+.image-crop-panel {
+  @import "crop-control";
+  @import "crop-close";
+  @import "crop-mark";
+  @import "crop-image-ie9wait";
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  box-sizing: border-box;
+  div {
+    box-sizing: border-box;
+  }
+  .crop-wrap {
+    position: absolute;
+    left: 50%;
+    top: -50%;
+    width:1px;
+    height:1px;
+    overflow:hidden;
+    transition: all .2s;
+    opacity: 0;
+    &.show {
+      left: 50%;
+      top: 50%;
+      overflow:visible;
+      opacity: 1;
+      background: #fff;
+    }
+  }
+  input[type=file] {
+    visibility: hidden;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  .crop-show {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    overflow: hidden;
+  }
+
+  .crop-has-image {
+    background: #f9f9f9;
+    background-image: linear-gradient(45deg, #ddd 25%, transparent 0, transparent 75%, #ddd 0), linear-gradient(45deg, #ddd 25%, transparent 0, transparent 75%, #ddd 0);
+    background-position: 0 0, 20px 20px;
+    background-size: 40px 40px;
+    z-index: 1;
+    cursor: grab;
+    &.grabing {
+      cursor: grabbing;
+    }
+  }
+  .crop-image-upload {
+    display: block;
+    border: 1px solid #eee;
+    background: #f1f1f1;
+    text-align: center;
+    color: #ccc;
+    cursor: pointer;
+    &:hover {
+      color: #999;
+    }
+    &::after {
+      display: block;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 50%;
+      line-height: 20px;
+      font-size: 14px;
+      content:'+请点击或拖拽(不支持ie)图片到此处+';
+    }
+  }
+  .crop-show-image,
+  .crop-shadow-image {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 0;
+  }
+  .crop-shadow-image {
+    opacity: 0.2;
+    background: rgba(0,0,0,0.5);
+  }
+}

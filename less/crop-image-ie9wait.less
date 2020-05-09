@@ -1,0 +1,21 @@
+
+.crop-image-ie9wait {
+  display: block;
+  background: #97fcff;
+  text-align: center;
+  color: #333;
+  cursor: pointer;
+  &:hover {
+    color: #999;
+  }
+  &::after {
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    line-height: 20px;
+    font-size: 14px;
+    content:'请耐心等待，图片上传中...';
+  }
+}

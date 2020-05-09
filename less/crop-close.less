@@ -1,0 +1,36 @@
+.crop-close {
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  z-index: 10;
+  &:hover {
+    &::after,
+    &::before {
+      border-top-color: #f30;
+      transform: rotate(-45deg);
+    }
+    &::after {
+      transform: rotate(-135deg);
+    }
+  }
+  &::after,
+  &::before {
+    content: '';
+    width: 60%;
+    display: block;
+    height: 0;
+    border-top: 2px solid #b7b1b1;
+    transform: rotate(45deg);
+    position: absolute;
+    left: 20%;
+    top: 50%;
+    transition: all .2s;
+  }
+  &::after {
+    transform: rotate(-45deg);
+  }
+}
