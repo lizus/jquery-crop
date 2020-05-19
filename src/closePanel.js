@@ -1,4 +1,4 @@
-
+import bodyEventOff from './bodyEventOff';
 var $=jQuery;
 
 var closePanel=function (){
@@ -9,6 +9,7 @@ var closePanel=function (){
   }
   if (r==true) {
     $('#image_crop_panel').remove();
+    bodyEventOff();
   }
 };
 

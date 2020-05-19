@@ -6,6 +6,7 @@ import isAjaxUploadSupported from './isAjaxUploadSupported';
 import ie9formId from './ie9formId';
 import config from './config';
 import {setCropConfig} from './config';
+import bodyEventOn from './bodyEventOn';
 var $=jQuery;
 
 var addPanel=function (){
@@ -69,6 +70,7 @@ var crop=function (e){
   var type=getType(this) || default_config.type;
   var ie9img=getIe9Img(this) || default_config.ie9img;
   var url=getUrl(this) || default_config.url;
+  bodyEventOn();
   setCropConfig('current_ele',this);
   setCropConfig('width',w);
   setCropConfig('height',h);

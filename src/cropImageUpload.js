@@ -1,5 +1,6 @@
 import showError from './showError';
 import config from './config';
+import bodyEventOff from './bodyEventOff';
 
 var $=jQuery;
 
@@ -13,11 +14,12 @@ var cropImageUpload=function (){
   var imgurl=img[0].toDataURL('image/'+config.current_type);
   var data={
     'img':imgurl,
-    'action':'image_upload',
+    'action':'crop_upload',
   };
   $.post(config.url,data,function (res){
     $('#image_crop_panel').remove();
     $(config.current_ele).trigger('cropImageUploaded',res);
+    bodyEventOff();
   });
 };
 

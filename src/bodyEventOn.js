@@ -1,5 +1,3 @@
-import {trace} from 'lizus';
-import crop from './crop';
 import closePanel from './closePanel';
 import uploadClick from './uploadClick';
 import fileUpload from './fileUpload';
@@ -15,10 +13,9 @@ import dragoverEvent from './dragoverEvent';
 import dropEvent from './dropEvent';
 import imgUploadChange from './imgUploadChange';
 
+var $=jQuery;
 
-(function($){
-  $('body').on('click','[data-component="image-crop"]',crop);
-  /*
+var bodyEventOn=function (){
   //$('body').on('click','.crop-mark',closePanel);
   $('body').on('click','.crop-close',closePanel);
   $('body').on('click','.crop-image-upload',uploadClick);
@@ -36,5 +33,6 @@ import imgUploadChange from './imgUploadChange';
   $('body').on('click','.crop-show-upload',cropImageUpload);
   $('body').on('blur','[name=crop_width]',resetWidth);
   $('body').on('blur','[name=crop_height]',resetHeight);
-  */
-})(jQuery);
+};
+
+export default bodyEventOn;
