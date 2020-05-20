@@ -6,7 +6,7 @@ import getShadowImage from './getShadowImage';
 
 //拿到文件名或图片数据（ie9）后显示图片
 export default function (file){
-  var img=getShadowImage();
+  var img=getShadowImage(true);
   var src=getObjectURL(file);
   if (isEmpty(src) || isNil(src)) {
     src=file;

@@ -9,7 +9,7 @@ var resetHeight=function (){
   var w=config.width;
   let ct=document.documentElement.clientHeight;
   if (h>0) {
-    if(h>ct) h=ct;
+    //if(h>ct) h=ct;
     setCropConfig('height',h);
   }else {
     h=config.default_height;

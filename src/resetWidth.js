@@ -9,7 +9,7 @@ var resetWidth=function (){
   var h=config.height;
   let cl=document.documentElement.clientWidth;
   if (w>0) {
-    if (w>cl) w=cl;
+    //if (w>cl) w=cl;
     setCropConfig('width',w);
   }else {
     w=config.default_width;

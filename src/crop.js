@@ -11,7 +11,7 @@ var $=jQuery;
 
 var addPanel=function (){
   var html='<div id="image_crop_panel" class="image-crop-panel">';
-  html+='<div class="crop-mark"></div>';
+  //html+='<div class="crop-mark"></div>';
   html+='<span class="crop-close"></span>';
   html+='<div class="crop-control">';
   html+='<div class="crop-show-btns">';
@@ -60,7 +60,7 @@ var crop=function (e){
     'url':'./upload.php',//上传图片的处理地址
     'width':500,//要裁剪的宽度
     'height':300,//要裁剪的高度
-    'size':2*1024*1024,//最大允许文件大小
+    'size':3.5*1024*1024,//最大允许文件大小
     'type':'jpg,jpeg,gif,png',//上传文件类型
   };
   var panel=$('#image_crop_panel');

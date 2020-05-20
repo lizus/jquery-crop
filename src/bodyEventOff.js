@@ -12,6 +12,7 @@ import resetHeight from './resetHeight';
 import dragoverEvent from './dragoverEvent';
 import dropEvent from './dropEvent';
 import imgUploadChange from './imgUploadChange';
+import cropImageKeyPress from './cropImageKeyPress';
 
 var $=jQuery;
 
@@ -22,7 +23,8 @@ var bodyEventOff=function (){
   $('body').off('dragover','.crop-show',dragoverEvent);
   $('body').off('drop','.crop-show',dropEvent);
   $('body').off('change','[name="imgUpload"]',imgUploadChange);
-  $('body').off('mousewheel DOMMouseScroll','.crop-has-image',cropImageWheel);
+  //$('body').off('mousewheel DOMMouseScroll','.crop-has-image',cropImageWheel);
+  $(window).off('keydown',cropImageKeyPress);
   $('body').off('mousedown','.crop-has-image',cropImageMouseDown);
   $('body').off('mouseup',cropImageMouseUp);
   //$('body').off('mousemove','.crop-has-image',cropImageMouseMove);

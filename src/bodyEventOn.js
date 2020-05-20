@@ -12,6 +12,8 @@ import resetHeight from './resetHeight';
 import dragoverEvent from './dragoverEvent';
 import dropEvent from './dropEvent';
 import imgUploadChange from './imgUploadChange';
+import cropImageMouseEnter from './cropImageMouseEnter';
+import cropImageKeyPress from './cropImageKeyPress';
 
 var $=jQuery;
 
@@ -22,12 +24,14 @@ var bodyEventOn=function (){
   $('body').on('dragover','.crop-show',dragoverEvent);
   $('body').on('drop','.crop-show',dropEvent);
   $('body').on('change','[name="imgUpload"]',imgUploadChange);
-  $('body').on('mousewheel DOMMouseScroll','.crop-has-image',cropImageWheel);
+  //$('body').on('mousewheel DOMMouseScroll','.crop-has-image',cropImageWheel);
+  $(window).on('keydown',cropImageKeyPress);
   $('body').on('mousedown','.crop-has-image',cropImageMouseDown);
   $('body').on('mouseup',cropImageMouseUp);
   //$('body').on('mousemove','.crop-has-image',cropImageMouseMove);
   $('body').on('mousemove','#image_crop_panel',cropImageMouseMove);
   //$('body').on('mouseleave','.crop-has-image',cropImageMouseUp);
+  $('body').on('mouseenter','.crop-has-image',cropImageMouseEnter);
   $('body').on('mouseleave','#image_crop_panel',cropImageMouseUp);
   $('body').on('click','.crop-show-cancel',cropImageReset);
   $('body').on('click','.crop-show-upload',cropImageUpload);

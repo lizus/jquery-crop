@@ -9,5 +9,6 @@ var cropImageMouseUp=function (e){
   img.removeData('x');
   img.removeData('y');
   $('.crop-show').removeClass('grabing');
+  window._originalScrollTop=-1;
 };
 export default cropImageMouseUp;

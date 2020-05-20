@@ -11,7 +11,7 @@ var cropImageUpload=function (){
     showError('你还没有图片喔。');
     return;
   }
-  var imgurl=img[0].toDataURL('image/'+config.current_type);
+  var imgurl=img[0].toDataURL('image/'+config.current_type,0.7);
   var data={
     'img':imgurl,
     'action':'crop_upload',

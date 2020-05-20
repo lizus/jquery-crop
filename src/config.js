@@ -9,7 +9,7 @@ var config={
   'default_height':300,//要裁剪的高度默认值
   'width':500,//要裁剪的宽度
   'height':300,//要裁剪的高度
-  'size':2*1024*1024,//最大允许文件大小
+  'size':3.5*1024*1024,//最大允许文件大小
   'type':'jpg,jpeg,gif,png',//上传文件类型
   'current_type':'jpeg',//当前图片的格式
 };

@@ -6,11 +6,14 @@ export default function (w,h){
   if (wrap.length<1) return;
   w=Math.floor(w);
   h=Math.floor(h);
+  var ct=document.documentElement.clientHeight;
+  var mt=Math.floor(h/2);
+  if (mt>ct/2) mt=ct/2;
   wrap.css({
     width:w,
     height:h,
     'margin-left':0-Math.floor(w/2),
-    'margin-top':0-Math.floor(h/2),
+    'margin-top': 0-mt,
   });
 };
 

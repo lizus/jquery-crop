@@ -13,8 +13,13 @@ var imgInit=function (){
   var oh=img[0].naturalHeight;//图片原本的高
   var w=ow;
   var h=oh;
+  var ratio=w/h;
   var cw=config.width;
   var ch=config.height;
+  if(ch == 'auto') {
+    ch=Math.floor(cw/ratio);
+    setCropConfig('height',ch);
+  }
   if (ow<cw) {
     cw=ow;
     setCropConfig('width',ow);
@@ -23,7 +28,6 @@ var imgInit=function (){
     ch=oh;
     setCropConfig('height',oh);
   }
-  var ratio=w/h;
   if (ratio < cw/ch) {//宽高比例比要裁剪的小，则高度方向会多出来
     w=cw;
     h=Math.floor(w/ratio);

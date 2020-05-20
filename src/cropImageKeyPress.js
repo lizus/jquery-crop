@@ -4,12 +4,12 @@ import {imgWidth,imgHeight,imgLeft,imgTop} from './getShadowImage';
 import draw from './draw';
 import {wrapWidth,wrapHeight} from './wrapCss';
 
-var cropImageWheel=function (e){
-  console.log($('#image_crop_panel').scrollTop());
-  window.icp_originalScrollTop !==-1 && $('#image_crop_panel').scrollTop(window.icp_originalScrollTop);
+//使用键盘上的上下方向键进行缩放
+var cropImageKeyPress=function (e){
+  if (e.keyCode!=40 && e.keyCode!=38 ) return;
+  stopE(e);
+  e.stopPropagation();
   var img=getShadowImage();
-  var delta = (e.originalEvent.wheelDelta && (e.originalEvent.wheelDelta > 0 ? 1 : -1)) ||  // chrome & ie
-  (e.originalEvent.detail && (e.originalEvent.detail > 0 ? -1 : 1));              // firefox
   var w=imgWidth();
   var h=imgHeight();
   var l=imgLeft();
@@ -20,11 +20,12 @@ var cropImageWheel=function (e){
   var cw=wrapWidth();
   var ch=wrapHeight();
   var step=0;
-  if (delta > 0) {
+  if (e.keyCode===40) {//down
     step=Math.floor(w*0.01) || 1;
     w=w+step;
     h=w/ratio;
-  } else if (delta < 0) {
+  }
+  if (e.keyCode===38) {//up
     w=w*(0.99);
     h=w/ratio;
     if (w+l<cw) {
@@ -41,6 +42,7 @@ var cropImageWheel=function (e){
     height:Math.floor(h)
   });
   draw();
-};
 
-export default cropImageWheel;
+  return false;
+};
+export default cropImageKeyPress;

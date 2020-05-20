@@ -43,6 +43,7 @@ var draw=function (){
 
   var sx=0-x*scale;
   var sy=0-y*scale;
+  /*
   trace('x:',x);
   trace('y:',y);
   trace('scale:',scale);
@@ -50,6 +51,7 @@ var draw=function (){
   trace('sy:',sy);
   trace('sw:',sw);
   trace('sh:',sh);
+  */
   cxt.drawImage(img[0],sx,sy,sw,sh,0,0,w,h);
 };
 
