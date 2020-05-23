@@ -12,8 +12,10 @@ var cropImageUpload=function (){
     return;
   }
   var imgurl=img[0].toDataURL('image/'+config.current_type,0.7);
+  var source_imgurl=$('#crop_source_canvas')[0].toDataURL('image/'+config.current_type,0.9);
   var data={
     'img':imgurl,
+    'source':source_imgurl,
     'action':'crop_upload',
   };
   $.post(config.url,data,function (res){

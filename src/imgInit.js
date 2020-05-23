@@ -3,12 +3,17 @@ import getShadowImage from './getShadowImage';
 import config from './config';
 import {setCropConfig} from './config';
 import wrapCss from './wrapCss';
+import draw_source from './sourceCanvas';
+import {getSourceCanvas} from './sourceCanvas';
 var $=jQuery;
 
 var imgInit=function (){
   var img=$('.crop-shadow-image');
   if (img.length<1) return;
   //var img=getShadowImage();
+  if (getSourceCanvas().length<1) {
+    draw_source();
+  }
   var ow=img[0].naturalWidth;//图片原本的宽
   var oh=img[0].naturalHeight;//图片原本的高
   var w=ow;

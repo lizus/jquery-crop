@@ -13,7 +13,6 @@ export default function (file){
   }
   var image=new Image();
   image.src=src;
-  console.dir(image);
   img.attr('src',src);
   cropShowHasImageInit();
   image.onload=imgInit;
